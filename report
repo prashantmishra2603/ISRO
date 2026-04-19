@@ -325,6 +325,31 @@ Deploy as a cloud-based tool for wider ISRO/academic use
 
 16. References
 
+
+-----------------------------------------------------------------
+
+
+Table of Contents
+Title Page .................................................. 1
+Certificate .................................................. 2
+Acknowledgement ............................................. 3
+Table of Contents ........................................... 4
+Abstract ..................................................... 5
+Main Content
+Introduction ................................................. 6
+SPICE Toolkit and Geometric Events ....................... 8
+Problem Statement .......................................... 10
+Objectives .................................................. 11
+System Architecture ....................................... 12
+Methodology ............................................... 14
+Implementation ............................................ 16
+Results and Analysis ..................................... 19
+Challenges Faced ......................................... 21
+Learning Outcomes ........................................ 22
+Conclusion ................................................ 23
+Future Scope of Work ..................................... 24
+References ................................................ 25
+
 NASA SPICE Toolkit Documentation – NAIF
 SPICE Geometry Finder (GF) Required Reading
 ISRO / URSC Internal Resources on Satellite Geometry
