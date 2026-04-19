@@ -171,3 +171,162 @@ Improved UI/UX
 SPICE Toolkit Documentation
 ISRO resources
 NASA SPICE Documentation
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+2. Abstract (≈ 1 page)
+This project presents the design and development of a web-based system that simplifies geometric event computations for satellite missions using NASA’s SPICE (Spacecraft Planet Instrument C-matrix Events) toolkit. In space missions, accurate determination of relative positions, visibility windows, occultations, eclipses, and other geometric events is essential for mission planning, navigation, and scientific observations.
+The SPICE toolkit, developed by NASA’s Navigation and Ancillary Information Facility (NAIF), is a powerful and reliable system widely used by space agencies including ISRO. However, it is primarily command-line based, requires deep domain knowledge, and involves complex data kernels, making it difficult for students, researchers, and non-expert users.
+To address this gap, a user-friendly web interface was developed. The frontend is built using JSP (Java Server Pages) with iframe-based navigation for seamless page transitions. The backend is implemented using ASP.NET (ASPX and ASPX.CS files), which handles user inputs, triggers SPICE-based computations, and processes results. A MySQL database is used to store user inputs, computation parameters, and generated results.
+Users can easily input parameters such as time intervals, observer location, target celestial body, and event type. The system then computes geometric events and displays results in a structured, readable format. This web-based approach significantly reduces complexity, improves usability, and makes SPICE computations accessible to a wider audience.
+The developed system demonstrates successful integration of modern web technologies with high-precision space geometry tools, offering a practical solution for educational and research purposes at ISRO centres.
+Keywords: SPICE Toolkit, Geometric Events, Web Interface, JSP, ASP.NET, Satellite Mission Planning
+
+3. Introduction (≈ 1.5 pages)
+The Indian Space Research Organisation (ISRO) is India’s premier space agency, responsible for satellite development, launch vehicles, interplanetary missions, and space research. The U R Rao Satellite Centre (URSC) in Bengaluru plays a key role in the design, development, assembly, and testing of satellites.
+In modern satellite operations, geometric computations are fundamental. They help determine:
+
+Satellite position and velocity relative to Earth and other celestial bodies
+Visibility windows from ground stations
+Alignment and relative geometry between satellites, planets, and stars
+Timing of critical events such as eclipses, occultations, and transits
+
+NASA’s SPICE toolkit is the de-facto standard used globally (including by ISRO) for performing such high-precision geometric calculations. It uses specially formatted data files called “kernels” (SPK, PCK, CK, FK, IK, LSK, etc.) to compute positions, orientations, and geometric events accurately.
+Despite its accuracy and reliability, SPICE remains challenging for new users because it is command-line oriented and demands significant technical expertise in astronomy, coordinate systems, and kernel management.
+This project aims to bridge this gap by developing an intuitive web-based interface that allows users to perform SPICE-based geometric event computations without dealing with low-level commands. The system provides a simple form-based input, processes requests on the server, and returns clear, structured outputs.
+
+4. Problem Statement (≈ 1 page)
+The SPICE toolkit is extremely powerful for space geometry computations, but it suffers from several usability limitations:
+
+It operates mainly through command-line tools
+Users must manually manage complex kernel files and understand SPICE syntax
+There is no graphical or web-based interface available officially
+Interpreting raw outputs is difficult for beginners and students
+Integration into modern workflows is time-consuming
+
+These issues restrict its use primarily to experienced mission designers and scientists. Students and junior researchers at ISRO and academic institutions often face a steep learning curve.
+The core problem addressed by this project is to simplify access to SPICE computations by providing a user-friendly web platform that hides the underlying complexity while maintaining computational accuracy. The system enables easy input of parameters, reliable backend processing, result storage, and clear output presentation.
+
+5. Objectives
+The primary objectives of the project are:
+
+To design and develop a web-based tool for performing geometric event computations using the SPICE toolkit
+To create an intuitive user interface using JSP for easy parameter input
+To implement backend logic using ASP.NET for processing requests and integrating SPICE
+To store user inputs and computation results in a MySQL database
+To generate structured and readable output for better interpretation
+To improve accessibility and usability for students, researchers, and non-expert users
+
+
+6. Literature Review (≈ 1.5 pages)
+The SPICE toolkit has been extensively used in planetary missions by NASA, ESA, JAXA, and ISRO since the 1990s. It provides robust functions for ephemeris calculations, frame transformations, time conversions, and geometry finder (GF) routines that detect events such as occultations, eclipses, rise/set times, and field-of-view intersections.
+Most existing implementations are script-based (using CSPICE, Python SpiceyPy, or MATLAB) and targeted at expert users. Very few attempts have been made to develop graphical or web-based interfaces for SPICE. Available tools are usually desktop applications or specialized mission-planning software with limited accessibility.
+This project contributes by combining the accuracy of the SPICE toolkit with modern web technologies (JSP + ASP.NET), making high-precision geometric computations available through a browser-based interface. It fills the gap between powerful backend computation and user-friendly frontend interaction.
+
+7. Methodology (≈ 2 pages)
+The system follows a modular client-server architecture:
+Step 1: Input Collection
+Users provide parameters through web forms — time range (UTC or TDB), observer body, target body, event type (e.g., occultation, eclipse), and other constraints.
+Step 2: Frontend Processing
+JSP pages collect inputs and use iframe for smooth navigation between different modules (Input, Computation, Results, History).
+Step 3: Backend Processing
+ASP.NET (ASPX + C# code-behind) receives the request, validates inputs, prepares SPICE commands or calls the SPICE library, and executes geometric event computations.
+Step 4: Database Handling
+MySQL database stores:
+
+User session/input data
+Computation parameters
+Generated results for future reference
+
+Step 5: Output Generation
+Results (time windows, event duration, geometry parameters) are formatted and displayed on the web interface in tabular or graphical form.
+
+8. System Architecture
+textUser → JSP Frontend (Forms + iframe navigation)
+         ↓
+   ASP.NET Backend (ASPX + C#)
+         ↓
+   SPICE Computation Engine (Kernel loading + GF routines)
+         ↓
+   MySQL Database (Store inputs & results)
+         ↓
+   Structured Output Display on Web Page
+The frontend manages user interaction, while the backend handles secure processing and SPICE integration.
+
+9. Technologies Used
+
+Frontend: JSP (Java Server Pages), HTML, CSS, JavaScript, iframe
+Backend: ASP.NET (ASPX pages + C# code-behind)
+Database: MySQL
+Computation Engine: NASA SPICE Toolkit
+Others: Web server (IIS/Tomcat), Kernel file management
+
+
+10. Implementation
+Frontend Implementation
+Multiple JSP pages were created for different modules. Iframe was used to link pages without full page reload, providing a smooth single-page-like experience. Input forms were designed with validation.
+Backend Implementation
+ASPX pages receive POST requests from JSP. The code-behind (ASPX.CS) processes data, loads required SPICE kernels, calls appropriate SPICE functions (especially Geometry Finder routines), and returns computed results.
+Database Implementation
+MySQL tables were designed to store user inputs, computation requests, and result sets for traceability.
+Integration
+Frontend communicates with backend via form submission or AJAX. Backend triggers SPICE computations and saves results before displaying them.
+
+11. Results & Analysis
+The system successfully computes geometric events such as occultations, eclipses, and visibility windows. Outputs are presented in a clean tabular format with start time, end time, and duration.
+The web interface significantly reduces the time and effort required compared to traditional command-line SPICE usage. Results match expected accuracy from direct SPICE execution.
+(Screenshots of input form, result page, and sample output tables can be added here)
+
+12. Challenges Faced
+
+Understanding the SPICE toolkit, kernel types, and Geometry Finder routines
+Integrating JSP frontend with ASP.NET backend
+Managing iframe navigation and session handling
+Loading and handling large SPICE kernel files on the server
+Debugging database connectivity and backend errors
+Ensuring proper error handling for invalid inputs
+
+
+13. Learning Outcomes
+Technical:
+
+Hands-on experience with NASA’s SPICE toolkit
+Full-stack web development using JSP and ASP.NET
+Database design and integration
+
+Practical:
+
+Exposure to real satellite mission planning concepts at URSC, ISRO
+Understanding of geometric computations in space missions
+
+Personal:
+
+Improved problem-solving and debugging skills
+Better understanding of research environment in space technology
+
+
+14. Conclusion
+The project successfully developed a web-based interface that simplifies complex geometric event computations using the SPICE toolkit. By combining JSP for frontend, ASP.NET for backend, and MySQL for data persistence, the system provides an accessible platform for students and researchers. It demonstrates that high-precision space geometry tools can be made user-friendly through modern web technologies.
+
+15. Future Scope
+
+Add real-time computation and progress indicators
+Implement advanced visualization (graphs, 3D orbit views)
+Develop RESTful APIs for external integration
+Improve UI/UX with modern frameworks (React or Angular)
+Add support for more SPICE functions and custom kernel upload
+Deploy as a cloud-based tool for wider ISRO/academic use
+
+
+16. References
+
+NASA SPICE Toolkit Documentation – NAIF
+SPICE Geometry Finder (GF) Required Reading
+ISRO / URSC Internal Resources on Satellite Geometry
+“Computing Space Mission Geometry Using NASA’s SPICE System” – Charles Acton, NASA
+SPICE Overview and Tutorials (NAIF)
