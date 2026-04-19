@@ -1,0 +1,173 @@
+2. Abstract (1–1.5 pages)
+
+This project focuses on the design and development of a web-based system for performing geometric event computations using the SPICE toolkit. In satellite missions, determining the relative positions and visibility of celestial bodies is critical for navigation, communication, and mission planning. The SPICE toolkit, developed by NASA, provides a reliable framework for such computations.
+
+However, SPICE is primarily command-line based and requires significant domain knowledge. This project aims to bridge that gap by creating a user-friendly web interface that simplifies the process of geometric event computation.
+
+The frontend is developed using JSP, where multiple pages are connected using iframe for smooth navigation. The backend is implemented using ASP.NET (ASPX and ASPX.CS), which handles computation logic and integrates with SPICE-based processing. A MySQL database is used to store user inputs and computed results.
+
+The system enables users to input parameters such as time intervals, observer location, and target body, and then generates results in a structured format. This approach reduces complexity, improves usability, and enhances accessibility for non-expert users.
+
+📌 3. Introduction (1.5–2 pages)
+
+ISRO is India’s national space agency, responsible for satellite launches, interplanetary missions, and space research. The U R Rao Satellite Centre is one of the primary centers focused on the design, development, and testing of satellites.
+
+In modern satellite systems, geometric computations play a crucial role. These computations help determine:
+
+Satellite position relative to Earth
+Visibility of satellites from ground stations
+Alignment between celestial bodies
+Event timing such as eclipses or occultations
+
+The SPICE toolkit is widely used in space missions for handling such computations. It provides data kernels and APIs to compute geometry-related parameters accurately.
+
+Despite its capabilities, SPICE tools are complex and not easily accessible to users without technical expertise. This project aims to develop a web-based interface that simplifies SPICE computations and provides an intuitive environment for users.
+
+📌 4. Problem Statement (1–1.5 pages)
+
+The SPICE toolkit is powerful but comes with several limitations in terms of usability:
+
+It requires command-line interaction
+Users must understand complex data formats
+There is no simple graphical or web-based interface
+Output interpretation can be difficult for beginners
+
+These challenges make it difficult for students or new researchers to use SPICE effectively.
+
+Therefore, the problem addressed in this project is to:
+
+Simplify SPICE-based geometric computations
+Provide a user-friendly web interface
+Enable easy input and output handling
+Improve accessibility and usability
+📌 5. Objectives (1 page)
+
+The main objectives of the project are:
+
+To design and develop a web-based SPICE computation tool
+To integrate frontend and backend technologies effectively
+To simplify complex geometric event calculations
+To store and manage data using MySQL database
+To provide clear and structured output to users
+To improve accessibility for non-technical users
+📌 6. Literature Review (1.5–2 pages)
+
+The SPICE toolkit has been widely used in space research and mission planning. It provides accurate geometric computations using spacecraft and planetary data.
+
+Existing systems using SPICE are primarily:
+
+Script-based
+Command-line oriented
+Designed for experts
+
+Few systems provide:
+
+Graphical interfaces
+Web-based access
+Simplified user interaction
+
+This highlights the need for a system that:
+
+Combines SPICE computation with modern web technologies
+Provides ease of use
+Improves user interaction
+📌 7. Methodology (2–2.5 pages)
+
+The system follows a structured approach for processing user requests:
+
+🔹 Step 1: Input Collection
+
+Users enter:
+
+Time range
+Target body
+Observer
+🔹 Step 2: Frontend Processing
+JSP pages collect input
+iframe used for navigation between modules
+🔹 Step 3: Backend Processing
+ASP.NET handles server-side logic
+ASPX.CS processes user requests
+SPICE computation is triggered
+🔹 Step 4: Database Handling
+MySQL stores:
+Input data
+Computed results
+🔹 Step 5: Output Generation
+Results displayed on web interface
+📌 8. System Architecture (1.5–2 pages)
+User Input
+   ↓
+JSP Frontend (UI + iframe navigation)
+   ↓
+ASP.NET Backend (ASPX, ASPX.CS)
+   ↓
+SPICE Computation Engine
+   ↓
+MySQL Database
+   ↓
+Output Display
+Explanation:
+Frontend handles user interaction
+Backend processes logic
+SPICE performs computation
+Database stores data
+Output is displayed to user
+📌 9. Technologies Used (1 page)
+JSP (Java Server Pages)
+ASP.NET (ASPX, ASPX.CS)
+MySQL
+SPICE Toolkit
+HTML, CSS
+iframe
+📌 10. Implementation (2–3 pages)
+🔹 Frontend
+JSP pages created for UI
+iframe used for linking pages
+Input forms designed for user interaction
+🔹 Backend
+ASPX handles requests
+ASPX.CS contains logic
+Integrates SPICE computation
+🔹 Database
+MySQL stores:
+Inputs
+Results
+🔹 Integration
+Frontend → Backend → SPICE → Database → Output
+📌 11. Results & Analysis (1.5–2 pages)
+System successfully computes geometric events
+Provides structured output
+Reduces complexity of SPICE usage
+Improves accessibility
+
+(Add screenshots here)
+
+📌 12. Challenges Faced (1–1.5 pages)
+Understanding SPICE toolkit
+Integrating JSP with ASP.NET
+Handling iframe navigation
+Debugging backend errors
+Database connectivity issues
+📌 13. Learning Outcomes (1–1.5 pages)
+Technical:
+SPICE toolkit usage
+Full-stack development
+Practical:
+Exposure to research environment
+Personal:
+Problem-solving
+Debugging skills
+📌 14. Conclusion (1 page)
+
+The project successfully demonstrates the development of a web-based tool for SPICE geometric event computation. It simplifies complex calculations and provides a user-friendly interface. The system improves accessibility and can be extended for advanced applications in satellite navigation.
+
+📌 15. Future Scope (1 page)
+Real-time computation
+Advanced visualization
+API integration
+Improved UI/UX
+📌 16. References (1 page)
+SPICE Toolkit Documentation
+ISRO resources
+NASA SPICE Documentation
